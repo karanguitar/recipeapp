@@ -1,5 +1,11 @@
 {>"layout" /}
 
 {<body}
-    THIS IS TEXT
+    {#recipe}
+        <div class="card">
+            <h4>{name} <button class="btn btn-dark">View</button></h4>
+
+        </div>
+
+    {/recipe}
 {/body}

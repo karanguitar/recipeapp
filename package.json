@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -14,11 +14,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "*",
-    "consolidate": "*",
+    "consolidate": "^0.15.1",
     "dust": "*",
     "dustjs-helpers": "*",
     "dustjs-linkedin": "*",
     "express": "*",
+    "knex": "^0.15.2",
+    "nodemon": "^1.18.4",
     "pg": "*"
   },
   "bugs": {
