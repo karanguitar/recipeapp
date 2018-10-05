@@ -30,7 +30,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/', (req, res) => {
     postgres.select().from('recipes')
     .then((recipe) => {
-        console.log(recipe)
         res.render('index', {
             recipe: recipe           
         });
