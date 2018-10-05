@@ -39,6 +39,19 @@ app.get('/', (req, res) => {
     })
 })
 
+app.post('/add', (req, res) => {
+    postgres('recipes').insert({
+        name : req.body.name,
+        ingredients: req.body.ingredients,
+        directions: req.body.directions
+    })
+    .then(
+        postgres.select().from('recipes').then(
+        res.redirect('/'))
+    )
+    
+})
+
 app.listen(3050, function(){
     console.log('Server is on!')
 })

@@ -1,6 +1,8 @@
 {>"layout" /}
 
 {<body}
+    <button class="btn btn-light btn-block" type="button" data-toggle="modal" data-target="#formModal">Add recipe</button>
+    <br>
     {#recipe}
         <div class="card p-4">
             <h4>{name} 
@@ -12,11 +14,45 @@
             </button>
             </h4>
             <div class="collapse" id="recipe_{id}">
-                TEST
+                <p><strong>Ingredients: </strong> {ingredients}</p>
+                <p><strong>Directions: </strong> {directions}</p>
             </div>
+            <button class="btn btn-light edit-recipe">edit</button>
+            <button class="btn btn-danger delete-recipe">delete</button>
         </div>
-
-        
-
     {/recipe}
+
+    <!-- Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="/add">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add recipe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Recipe name</label>
+                        <input type="text" class="form-control" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Ingredients</label>
+                        <input type="text" class="form-control" name="ingredients" />
+                    </div>
+                    <div class="form-group">
+                        <label>Directions</label>
+                        <input type="text" class="form-control" name="directions" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Save" /> 
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
 {/body}
